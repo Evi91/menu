@@ -1,0 +1,46 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 660 Ti (ID=0x1183)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.043 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Ewelina\Desktop\magisterka\menu\proba_Data\Managed\System.Core.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: be8 -> priority: 1 
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1713)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.456575 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 169.
+Total: 0.204198 ms (FindLiveObjects: 0.037011 ms CreateObjectMapping: 0.035734 ms MarkObjects: 0.089336 ms  DeleteObjects: 0.041796 ms)
+
+Level 'scena1' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 272)
+
+Level 'scena1' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 272)
+
+Quit
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
