@@ -4,7 +4,8 @@ using System.Collections;
 public class CameraControl : MonoBehaviour {
 
 	public Camera camera1;
-	bool busy;
+	public static bool busy;
+	public static bool startTimer;
 	int frame=0;
 	//public Camera camera2;
 	// Use this for initialization
@@ -16,6 +17,7 @@ public class CameraControl : MonoBehaviour {
 		//camera2.GetComponent<KinectManager>().enabled = false;
 		//camera2.GetComponent<shining>().enabled = false;
 		busy = false;
+		startTimer = false;
 
 	}
 	
@@ -26,15 +28,15 @@ public class CameraControl : MonoBehaviour {
 				camera1.transform.position = new Vector3 (1.4f, -3.3f, 8.67f);
 				camera1.transform.rotation = new Quaternion (4f, 180f, 0f, 0f);
 				SphereTriggerPoint1.startCam2 = false;
-				Debug.Log ("Druga Kamera");
+				//Debug.Log ("Druga Kamera");
 			}
-			if (powderPoints.startCam3) {
-
+			if (powderPoints.startCam3 && startTimer==false) {
+				startTimer=true;
 				camera1.transform.position = new Vector3 (-78.4f, -3.3f, 8.67f);
 				//camera1.transform.rotation= new Quaternion(0f,0f,0f,0f);
-				changeCamera();
+					//changeCamera();
 				//StartCoroutine (waitFunction ());
-				Debug.Log ("Trzecia Kamera");
+				//Debug.Log ("Trzecia Kamera");
 				//powderPoints.startCam3 = false;
 				//SphereTriggerPoint1.startCam2 = true;
 
@@ -46,20 +48,20 @@ public class CameraControl : MonoBehaviour {
 	public void changeCamera()
 	{
 
-		StartCoroutine (waitFunction ());
+		//StartCoroutine (waitFunction ());
 
 	}
 
-	IEnumerator waitFunction() 
+/*	IEnumerator waitFunction() 
 	{
 		busy = true;
 		//Debug.Log ("Jestem w petli!!!!!!!!!!!!");
-		yield return new WaitForSeconds(10);
+		yield return new WaitForSeconds(2);
 		powderPoints.startCam3=false;
 		SphereTriggerPoint1.startCam2 = true;
 		busy = false;
 		Cart.points++;
 		powderPoints.howManyRound++;
 		Debug.Log ("Ilosc rund:"+powderPoints.howManyRound);
-	}
+	}*/
 }

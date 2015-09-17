@@ -100,7 +100,7 @@ public class KinectManager : MonoBehaviour
 	
 
 	// Bool to keep track of whether Kinect has been initialized
-	private bool KinectInitialized = false; 
+	public bool KinectInitialized = false; 
 	
 	// Bools to keep track of who is currently calibrated.
 	private bool Player1Calibrated = false;
@@ -174,7 +174,7 @@ public class KinectManager : MonoBehaviour
 	public List<KinectGestures.GestureListenerInterface> gestureListeners;
 	
 	private Matrix4x4 kinectToWorld, flipMatrix;
-	private static KinectManager instance;
+	public static KinectManager instance;
 	
     // Timer for controlling Filter Lerp blends.
     private float lastNuiTime;

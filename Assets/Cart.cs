@@ -8,6 +8,7 @@ public class Cart : MonoBehaviour {
 	public static int points = 0;
 	//public static float isIn = 0;
 	public static bool goPowder=false;
+	//public GameObject cart;
 
 
 	List<GameObject> collected = new List<GameObject> ();
@@ -31,7 +32,6 @@ public class Cart : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
 
 
 	}

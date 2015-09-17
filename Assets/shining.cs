@@ -49,7 +49,7 @@ public class shining : MonoBehaviour {
 
 		frame=Time.frameCount;
 
-		if(((frame%speedShine)<=(speedShine/2)) && ((frame%speedShine)>0))
+		if(((frame%speedShine)<=(speedShine/2)) && ((frame%speedShine)>0) )
 		{
 			//position.Add(new Vector3(jeden.transform.position.x,jeden.transform.position.y, jeden.transform.position.z));
 			if (Cart.points == 0) 
@@ -60,7 +60,7 @@ public class shining : MonoBehaviour {
 				Shine (trzy);
 			else if(Cart.points == 3)
 				Shine (cztery);
-			if (SphereTriggerPoint1.rend1.enabled==true) {
+			if (SphereTriggerPoint1.rend1.enabled==true ) {
 				Shine (point1);				
 			}
 			else if (SphereTriggerPoint2.rend2.enabled==true) {
@@ -78,6 +78,7 @@ public class shining : MonoBehaviour {
 				Shine(powderL);
 				Shine(powderR);
 			}
+
 		}
 		if(((frame%speedShine)>(speedShine/2)) && ((frame%speedShine)<=(speedShine-1)))
 		{
@@ -107,6 +108,8 @@ public class shining : MonoBehaviour {
 				noShine(powderR);
 			}
 		}
+
+	
 
 		/*Transform parent = jeden.transform;
 		foreach(Transform child in parent){ child.gameObject.layer = LayerMask.NameToLayer("Box"); }*/

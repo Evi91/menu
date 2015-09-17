@@ -9,6 +9,7 @@ public class powderPoints : MonoBehaviour{
 	public static bool stopRound;
 	public static int howManyRound;
 	public static bool startCam3;
+	public static bool end;
 	// Use this for initialization
 	void Start () {
 		startRound = false;
@@ -36,6 +37,14 @@ public class powderPoints : MonoBehaviour{
 		stopRound = false;
 	}
 
+	void shineAll()
+	{
+		SphereTriggerPoint1.rend1.enabled = true;
+		SphereTriggerPoint3.rend3.enabled = true;
+		SphereTriggerPoint2.rend2.enabled = true;
+		SphereTriggerPoint4.rend4.enabled = true;
+
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -45,18 +54,25 @@ public class powderPoints : MonoBehaviour{
 			startR ();
 		} 
 
-		if (Cart.points == 15 || Cart.points == 24 || Cart.points == 33 || Cart.points == 42) {
+		if (Cart.points == 15 || Cart.points == 24 || Cart.points == 33) {
 			//Debug.Log (howManyRound);
 		/*	if(howManyRound==4)
 			{
 				Destroy(powderL);
 			}*/
-			if(stopRound==true){
+			if(stopRound==true && howManyRound!=3){
 					stopR();
 					startCam3=true;
 
 			}
 
+				
+
+		}
+
+		if (Cart.points == 42) {
+			shineAll();
+			end=true;
 		}
 		
 	
