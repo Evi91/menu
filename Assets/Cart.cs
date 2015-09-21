@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 
 public class Cart : MonoBehaviour {
+	public static bool scene2=false;
 
 	public static int points = 0;
 	//public static float isIn = 0;
@@ -27,6 +28,7 @@ public class Cart : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		scene2 = true;
 	
 	}
 

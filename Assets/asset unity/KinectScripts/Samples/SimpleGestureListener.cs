@@ -82,12 +82,12 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
 	public bool GestureCompleted (uint userId, int userIndex, KinectGestures.Gestures gesture, 
 	                              KinectWrapper.NuiSkeletonPositionIndex joint, Vector3 screenPos)
 	{
-		if (gesture == KinectGestures.Gestures.SwipeLeft) {
+		if (gesture == KinectGestures.Gestures.SwipeLeft && Cart.scene2) {
 			Debug.Log("Swipe Left Completed!");
 			GameObject.FindObjectOfType<Shelf>().SwipeLeft();
 		}
 
-		if (gesture == KinectGestures.Gestures.SwipeRight) {
+		if (gesture == KinectGestures.Gestures.SwipeRight && Cart.scene2) {
 			//Debug.Log("Swipe Left Completed!");
 			GameObject.FindObjectOfType<Cart>().SwipeRight();
 			Debug.Log("Swipe Right Completed!");
