@@ -8,6 +8,11 @@ public class calibrationTrigger : MonoBehaviour {
 	public  GameObject trigger;
 	public  GameObject triggerNext;
 	public static bool all;
+	float x;
+	int timeLeft;
+	int isOk;
+	public Vector3 lHPos;
+	public Vector3 rHPos;
 
 	public static GameObject leftHand ;
 	public static GameObject rightHand;
@@ -59,10 +64,35 @@ public class calibrationTrigger : MonoBehaviour {
 		
 	}
 
+
+	void changePos(int k)
+	{
+	
+
+		
+		if (k == 1) {
+			leftHand.transform.position=new Vector3(leftHand.transform.position.x+0.281f,leftHand.transform.position.y +0.452f ,leftHand.transform.position.z);
+		}
+		else if (k == 2) {
+			leftHand.transform.position=new Vector3(leftHand.transform.position.x-0.281f,leftHand.transform.position.y +0.321f ,leftHand.transform.position.z);
+		}
+
+		else if (k == 3) {
+			rightHand.transform.position=new Vector3(rightHand.transform.position.x-0.23f,rightHand.transform.position.y +0.452f ,leftHand.transform.position.z);
+		}
+		else if (k == 4) {
+			rightHand.transform.position=new Vector3(rightHand.transform.position.x+0.23f,rightHand.transform.position.y +0.321f ,leftHand.transform.position.z);
+		}
+
+
+	}
 	
 	// Use this for initialization
 	void Start () {
-		now = false;
+		//now = true;
+		isOk = 0;
+		x = 5f; 
+		timeLeft= (int) x;	
 
 			all = false;
 
@@ -112,6 +142,7 @@ public class calibrationTrigger : MonoBehaviour {
 	{
 		trigger = array [i];
 		if (i < 7) {
+
 			triggerNext = array [i+1];
 			trigger.GetComponent<Renderer> ().enabled = false;
 			triggerNext.GetComponent<Renderer>().enabled=true;
@@ -131,6 +162,11 @@ public class calibrationTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (isOk > 0) {
+			x -= Time.deltaTime;
+			timeLeft = (int)x;
+			Debug.Log("Czas:"+timeLeft);
+		}
 
 		if (now) {
 			frame = Time.frameCount;
@@ -184,13 +220,50 @@ public class calibrationTrigger : MonoBehaviour {
 			}
 
 			if (lHand) {
-				TriggerOK (0);
 				lHand = false;
+				lHPos=new Vector3 (leftHand.transform.position.x,leftHand.transform.position.y,leftHand.transform.position.z);
+				isOk++;
+				if(isOk==1 && timeLeft>0){
+					changePos(1);
+					x=5f;
+				}
+				else if(isOk==2 && timeLeft>0)
+				{
+					changePos(2);
+					x=5f;
+				}
+			
 			}
+			if(!lHand && timeLeft<=0 && isOk<=3)
+			{
+				TriggerOK (0);
+				isOk=4;
+			}
+
+
 			if (rHand) {
-				TriggerOK (1);
 				rHand = false;
+				rHPos=new Vector3 (leftHand.transform.position.x,leftHand.transform.position.y,leftHand.transform.position.z);
+				isOk++;
+				if(isOk==5 && timeLeft>0){
+					changePos(3);
+					x=5f;
+				}
+				else if(isOk==6 && timeLeft>0)
+				{
+					changePos(4);
+					x=5f;
+				}
+
 			}
+			if(!rHand && timeLeft<=0 && isOk>4 && isOk<=7)
+			{
+				TriggerOK (1);
+				isOk=8;
+			}
+
+
+
 			if (lElbow) {
 				TriggerOK (2);
 				lElbow = false;
@@ -216,6 +289,7 @@ public class calibrationTrigger : MonoBehaviour {
 				rFoot = false;
 			}
 		}
+
 
 
 		

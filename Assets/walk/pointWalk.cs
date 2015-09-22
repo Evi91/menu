@@ -16,31 +16,31 @@ public class pointWalk : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(exer1.points==4)
+		if(exer1.points==4 || exer1.points==19 )
 		{
 			exer1.exerNum=2;
 			exer1.isready=false;
-			exer1.points=5;
+			exer1.points++;
 			/*startCam1=false;
 			startCam2=true;
 			exer1.points=5;*/
 		}
-		else if(exer1.points==9)
+		else if(exer1.points==9 || exer1.points==24)
 		{
 			exer1.exerNum=3;
 			exer1.isready=false;
-			exer1.points=10;
+			exer1.points++;
 			/*startCam1=false;
 			startCam2=true;
 			exer1.points=5;*/
 		}
-		else if(exer1.points==14)
+		else if(exer1.points==14 || exer1.points==29)
 		{
 			exer1.exerNum=1;
 			startCam1=false;
 			startCam2=true;
-			exer1.points=5;
-			exer1.points=15;
+			exer1.points++;
+
 			exer1.isready=false;
 		}
 	

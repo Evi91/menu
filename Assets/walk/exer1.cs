@@ -132,6 +132,7 @@ public class exer1 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
 		//all = false;
 		for(int i=0; i<8; i++)
 		{
@@ -262,7 +263,7 @@ public class exer1 : MonoBehaviour {
 
 					Debug.Log ("pierwszaPo" + rightKnee.transform.position.z);
 
-					coolDown = 50;
+					coolDown = 30;
 				}
 
 				 if(LeftHand.collision && RightHand.collision && RightKnee.collision && LeftKnee.collision  && wait)
@@ -276,7 +277,7 @@ public class exer1 : MonoBehaviour {
 					leftKnee.transform.position = new Vector3 (leftKnee.transform.position.x, leftKnee.transform.position.y, pozitionzLeg+ 0.179f);
 					Debug.Log ("drugaPo" + rightKnee.transform.position.z);
 
-					coolDown = 50;
+					coolDown = 30;
 
 				}
 				wait=!wait;
@@ -301,7 +302,7 @@ public class exer1 : MonoBehaviour {
 					rightKnee.transform.position = new Vector3 (rightKnee.transform.position.x, rightKnee.transform.position.y, pozitionzLeg + 0.179f);
 					leftKnee.transform.position = new Vector3 (leftKnee.transform.position.x, leftKnee.transform.position.y, pozitionzLeg);
 					Debug.Log ("pierwszaPo" + rightKnee.transform.position.z);
-					coolDown = 50;
+					coolDown = 30;
 				} else if (LeftHand.collision && RightHand.collision && RightKnee.collision && LeftKnee.collision && leftKnee.transform.position.z == pozitionzLeg) {
 					Debug.Log ("DrugaaPetlaWeszla" + rightKnee.transform.position.z);
 					if (punkty) {
@@ -311,7 +312,7 @@ public class exer1 : MonoBehaviour {
 					rightKnee.transform.position = new Vector3 (rightKnee.transform.position.x, rightKnee.transform.position.y, pozitionzLeg);
 					leftKnee.transform.position = new Vector3 (leftKnee.transform.position.x, leftKnee.transform.position.y, pozitionzLeg + 0.179f);
 					Debug.Log ("drugaPo" + rightKnee.transform.position.z);
-					coolDown = 50;
+					coolDown = 30;
 				}
 
 			}
@@ -373,7 +374,7 @@ public class exer1 : MonoBehaviour {
 		
 		frame=Time.frameCount;
 		
-	/*	if(((frame%speedShine)<=(speedShine/2)) && ((frame%speedShine)>0))
+		if(((frame%speedShine)<=(speedShine/2)) && ((frame%speedShine)>0))
 		{
 			//position.Add(new Vector3(jeden.transform.position.x,jeden.transform.position.y, jeden.transform.position.z));
 			if (leftHand.GetComponent<Renderer> ().enabled==true) 
@@ -423,19 +424,19 @@ public class exer1 : MonoBehaviour {
 			}
 		}
 
-*/
+
 		
 		
 		
 	}
 
-	void OnGUI()
+	/*void OnGUI()
 	{
 		GUIStyle literki = new GUIStyle ("Label");
 		literki.fontSize = ((Screen.width / 20));
 		literki.fontStyle = FontStyle.Bold;
 		
 		GUI.Label (new Rect (0, 0, 300, 300), "Pkt: " + points, literki);
-	}
+	}*/
 
 }

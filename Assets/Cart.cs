@@ -75,12 +75,12 @@ public class Cart : MonoBehaviour {
 		goPowder = true;
 	}
 
-	void OnGUI()
+	/*void OnGUI()
 	{
 		GUIStyle literki = new GUIStyle ("Label");
 		literki.fontSize = ((Screen.width / 20));
 		literki.fontStyle = FontStyle.Bold;
 
 		GUI.Label (new Rect (0, 0, 300, 300), "Pkt: " + points, literki);
-	}
+	}*/
 }

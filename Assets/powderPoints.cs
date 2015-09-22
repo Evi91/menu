@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using System.Text;
+using System.IO;
+
 
 public class powderPoints : MonoBehaviour{
 
@@ -10,12 +13,15 @@ public class powderPoints : MonoBehaviour{
 	public static int howManyRound;
 	public static bool startCam3;
 	public static bool end;
+	public static string t;
 	// Use this for initialization
 	void Start () {
+		File.Delete("time.txt");
 		startRound = false;
 		stopRound = false;
 		startCam3 = false;
 		howManyRound = 0;
+		File.CreateText ("time.txt");
 		//endRound = false;
 	}
 
@@ -73,6 +79,9 @@ public class powderPoints : MonoBehaviour{
 		if (Cart.points == 42) {
 			shineAll();
 			end=true;
+			t=gameTime.time;
+			System.IO.File.WriteAllText("time.txt", t);
+
 		}
 		
 	
